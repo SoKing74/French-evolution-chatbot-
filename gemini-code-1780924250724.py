@@ -30,6 +30,7 @@ with st.sidebar:
     st.header("⚖️ Conditions d'Utilisation")
     st.markdown("""
     En participant à l'évolution de ce chatbot, vous acceptez les règles suivantes :
+    * **Le service va etre redemarer, vous poureez le retrouver depuis un autre site a checher avec le mots: chatbotwo.
     * **Respect et bienveillance :** Ne lui apprenez pas d'insultes, de propos haineux ou inappropriés.
     * **Données publiques :** Tout ce que vous lui expliquez est stocké et peut être affiché aux autres utilisateurs. Ne partagez pas d'informations privées (nom, adresse, mots de passe).
     * **Modération :** Le créateur se réserve le droit de réinitialiser la mémoire en cas d'abus.

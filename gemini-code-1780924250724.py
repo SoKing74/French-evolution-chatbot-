@@ -2,7 +2,7 @@ import streamlit as st
 import json
 import os
 
-# Fichier de mémoire partagé par les internautes
+
 FICHIER_MEMOIRE = "memoire_collective.json"
 
 def charger_memoire():
@@ -18,17 +18,14 @@ def sauvegarder_memoire(memoire):
     with open(FICHIER_MEMOIRE, "w", encoding="utf-8") as f:
         json.dump(memoire, f, ensure_ascii=False, indent=4)
 
-# Initialisation de la mémoire et de l'état du bot
 memoire = charger_memoire()
 
 if "mot_en_attente" not in st.session_state:
     st.session_state.mot_en_attente = None
 
-# ---- INTERFACE UTILISATEUR ----
-st.title("🤖 Le Chatbot Évolutif Collectif")
-st.write("Ce chatbot ne sait rien au départ. Parlez-lui pour construire sa mémoire !")
+st.title("Royal-Bot")
+st.write("French chatbot (b1) Utiliser ce chatbot pour l'evoluer (<b1)")
 
-# Barre latérale pour les Conditions d'Utilisation
 with st.sidebar:
     st.header("⚖️ Conditions d'Utilisation")
     st.markdown("""
@@ -47,14 +44,12 @@ with st.sidebar:
         else:
             st.write("Le bot est encore totalement vide.")
 
-# Zone de discussion
-message_user = st.text_input("Écrivez votre message ici :", key="input_user")
+message_user = st.text_input("Chat here :", key="input_user")
 
 if message_user:
     message = message_user.lower().strip()
     reponse = ""
 
-    # Cas 1 : Le bot attend une explication
     if st.session_state.mot_en_attente:
         mot_appris = st.session_state.mot_en_attente
         memoire[mot_appris] = message
@@ -62,7 +57,6 @@ if message_user:
         reponse = f"Merci ! J'ai enregistré : **{mot_appris}** signifie maintenant *'{message}'* pour tout le monde."
         st.session_state.mot_en_attente = None # Réinitialisation
 
-    # Cas 2 : Recherche de mots connus
     else:
         mots = message.split()
         trouve = False
@@ -72,7 +66,6 @@ if message_user:
                 trouve = True
                 break
         
-        # Cas 3 : Le bot ne connaît rien, il demande à apprendre
         if not trouve:
             mots_interessants = [m for m in mots if len(m) > 3]
             if mots_interessants:

@@ -35,6 +35,18 @@ with st.sidebar:
     * **Respect et bienveillance :** Ne lui apprenez pas d'insultes, de propos haineux ou inappropriés.
     * **Données publiques :** Tout ce que vous lui expliquez est stocké et peut être affiché aux autres utilisateurs. Ne partagez pas d'informations privées (nom, adresse, mots de passe).
     * **Modération :** Le créateur se réserve le droit de réinitialiser la mémoire en cas d'abus.
+    st.write("---")
+    
+st.subheader("🛠️ Zone Admin")
+# Mot de passe simple pour éviter que n'importe quel internaute efface tout
+mot_de_passe = st.text_input("Mot de passe admin :", type="password")
+
+if mot_de_passe == "prk": 
+    if st.button("🔴 Réinitialiser la mémoire"):
+        memoire = {}
+        sauvegarder_memoire(memoire)
+        st.success("La mémoire a été vidée avec succès !")
+        st.rerun()
     """)
     
     st.write("---")

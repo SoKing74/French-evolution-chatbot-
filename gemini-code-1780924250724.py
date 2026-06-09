@@ -30,6 +30,7 @@ with st.sidebar:
     st.header("⚖️ Conditions d'Utilisation")
     st.markdown("""
     En participant à l'évolution de ce chatbot, vous acceptez les règles suivantes :
+    * **Merci de be pas faire comme AxelBois, ( axel.bois@esr74.education ) et de ne pas publier d'information ni de faire de remarque ou' d'oposition ou de cree des mots avec une signification inaproprié
     * **Le service va etre redemarer, vous poureez le retrouver depuis un autre site a checher avec le mots: chatbotwo.
     * **Respect et bienveillance :** Ne lui apprenez pas d'insultes, de propos haineux ou inappropriés.
     * **Données publiques :** Tout ce que vous lui expliquez est stocké et peut être affiché aux autres utilisateurs. Ne partagez pas d'informations privées (nom, adresse, mots de passe).
